@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: MyString
+  name: MyString
+  description: MyText
+  request: MyText
+  precondition: MyText
+  comment: MyText
+  execution: 2014-08-17
+
+two:
+  number: MyString
+  name: MyString
+  description: MyText
+  request: MyText
+  precondition: MyText
+  comment: MyText
+  execution: 2014-08-17

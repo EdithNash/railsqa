@@ -1,0 +1,29 @@
+<h1>Listing Indicators</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>definition</th>
+      <th>calculation</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @indicators.each do |indicator| %>
+      <tr>
+        <td><%= indicator.description %></td>
+        <td><%= indicator.definition %></td>
+        <td><%= indicator.calculation %></td>
+        <td><%= link_to 'Edit', edit_admin_indicator_path(indicator) %></td>
+        <td><%= link_to 'Destroy', admin_indicator_path(indicator), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<button  class="btn"><%= link_to 'New Indicator', new_admin_indicator_path %></button>

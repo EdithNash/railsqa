@@ -1,0 +1,43 @@
+<%= form_for @incident, url: incident do |f| %>
+  <% if @incident.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@incident.errors.count, "error") %> prohibited this admin_incident from being saved:</h2>
+
+      <ul>
+      <% @incident.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <div class="field">
+    <%= f.label :Description %><br>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Evidence %><br>
+    <%= f.text_area :evidence %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Incidente_date %><br>
+    <%= f.text_field :Incidente_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rvalidation_date %><br>
+    <%= f.text_field :rvalidation_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rvalidationcount %><br>
+    <%=f.text_field :rvalidationcount %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

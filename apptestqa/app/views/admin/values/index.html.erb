@@ -1,0 +1,29 @@
+<h1>Listing Values</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Indicator</th>
+      <th>Classification</th>
+      <th>Value</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @values.each do |value| %>
+      <tr>
+        <td><%= indicator_name(value.indicator_id)%></td>
+        <td><%= classification_name(value.classification_id)%></td>
+        <td><%= value.value %></td>
+        <td><%= link_to 'Edit', edit_admin_value_path(value) %></td>
+        <td><%= link_to 'Destroy', admin_value_path(value), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<button  class="btn"><%= link_to 'New Value', new_admin_value_path %></button>

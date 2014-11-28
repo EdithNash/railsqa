@@ -1,0 +1,35 @@
+<%#= form_for(@proyect) do |f| %>
+<%= form_for @proyect, url: proyect do |f| %>
+  <% if @proyect.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@proyect.errors.count, "error") %> prohibited this proyect from being saved:</h2>
+
+      <ul>
+      <% @proyect.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :version %><br>
+    <%= f.text_field :version %>
+  </div>
+  <div class="field">
+    <%= f.label :classification %><br>
+    <%= f.collection_select :classification_id, Classification.all, :id, :description %>
+  </div>
+   <div class="field">
+    <%= f.label :statusqc %><br>
+    <%= f.collection_select :statusqc_id, Statusqc.all, :id, :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <h1>Listing step</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Description</th>
+        <th>Expected</th>
+        <th>Result</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @step.each do |step| %>
+        <tr>
+          <td><%= step.number %></td>
+          <td><%= step.description %></td>
+          <td><%= step.expected %></td>
+          <td><%= step.result%></td>
+          <td><%= link_to 'Edit', edit_admin_step_path(step) %></td>
+          <td><%= link_to 'Destroy', admin_step_path(step)  , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <button  class="btn"><%= link_to 'New step', new_admin_step_path %></button>
+</div>

@@ -1,0 +1,22 @@
+
+<%= form_for @enviroment, url: enviroment do |f| %>
+  <% if @enviroment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@enviroment.errors.count, "error") %> prohibited this admin_enviroment from being saved:</h2>
+
+      <ul>
+      <% @enviroment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :enviroment %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,33 @@
+
+<!--http://guides.rubyonrails.org/layouts_and_rendering.html-->
+<%= form_for @value, url: value do |f| %>
+  <% if @value.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@value.errors.count, "error") %> prohibited this admin_value from being saved:</h2>
+
+      <ul>
+      <% @value.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :indicator %><br>
+    <%= f.collection_select :indicator_id, Indicator.all, :id, :description %>
+  </div>
+
+   <div class="field">
+    <%= f.label :classification %><br>
+    <%= f.collection_select :classification_id, Classification.all, :id, :description %>
+  </div>
+   
+  <div class="field">
+    <%= f.label :value %><br>
+    <%= f.text_field :value %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

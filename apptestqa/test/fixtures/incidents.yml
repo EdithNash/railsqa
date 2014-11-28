@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  evidence: MyText
+  Incidente_date: 2014-08-17
+  rvalidation_date: 2014-08-17
+  rvalidationcount: 1
+
+two:
+  description: MyText
+  evidence: MyText
+  Incidente_date: 2014-08-17
+  rvalidation_date: 2014-08-17
+  rvalidationcount: 1

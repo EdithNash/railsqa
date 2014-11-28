@@ -1,0 +1,31 @@
+
+<!--http://guides.rubyonrails.org/layouts_and_rendering.html-->
+<%= form_for @indicator, url: indicator do |f| %>
+  <% if @indicator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@indicator.errors.count, "error") %> prohibited this admin_indicator from being saved:</h2>
+
+      <ul>
+      <% @indicator.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :definition %><br>
+    <%= f.text_area :definition %>
+  </div>
+  <div class="field">
+    <%= f.label :calculation %><br>
+    <%= f.text_area :calculation %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

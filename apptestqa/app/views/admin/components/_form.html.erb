@@ -1,0 +1,27 @@
+
+<%= form_for @component, url: component do |f| %>
+  <% if @component.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@component.errors.count, "error") %> prohibited this admin_component from being saved:</h2>
+
+      <ul>
+      <% @component.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :project %><br>
+    <%= f.collection_select :proyect_id, Proyect.all, :id, :name%>
+  </div>
+
+  <div class="field">
+    <%= f.label :Description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

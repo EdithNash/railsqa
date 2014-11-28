@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <h1>Listing sugestion</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Evidence</th>
+        <th>sugestion_date</th>
+        <th>resolution</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @sugestion.each do |sugestion| %>
+        <tr>
+          <td><%= sugestion.description %></td>
+          <td><%= sugestion.evidence %></td>
+          <td><%= sugestion.suggestion_date %></td>
+          <td><%= sugestion.resolution %></td>
+          <td><%= link_to 'Edit', edit_admin_sugestion_path(sugestion) %></td>
+          <td><%= link_to 'Destroy', admin_sugestion_path(sugestion)  , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <button  class="btn"><%= link_to 'New sugestion', new_admin_sugestion_path %></button>
+</div>

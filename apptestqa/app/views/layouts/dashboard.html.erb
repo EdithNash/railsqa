@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Apptestqa</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="container">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="icon-bar">a</span>
+                    <span class="icon-bar">b</span>
+                    <span class="icon-bar">c</span>
+                  </a>
+                  <a class="brand" href="#">Test QC</a>
+                  <div class="nav-collapse collapse navbar-responsive-collapse">
+                    <ul class="nav">
+                      <li class="active"><a href="#">Inicio</a></li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Catálogos<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Ambiente</a></li>
+                          <li><a href="#">Grupos</a></li>
+                          <li><a href="#">Escenarios</a></li>
+                          <li class="divider"></li>
+                          <li class="nav-header">Administración</li>
+                          <li><a href="#">Proyectos</a></li>
+                          <li><a href="#">Indicadores</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Seguimiento</a></li>
+                      <li><a href="#">Reportes</a></li>
+                      <li><a href="#">Gráficas</a></li>
+                    </ul>
+                    
+                    <ul class="nav pull-right">
+                      <li><a href="#">Cerrar sesión</a></li>
+                      
+
+
+                      <!--<li class="divider-vertical"></li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Separated link</a></li>
+                        </ul>
+                      </li>-->
+                    </ul>
+                  </div><!-- /.nav-collapse -->
+                </div>
+              </div><!-- /navbar-inner -->
+            </div><!-- /navbar -->
+         
+
+<body>
+  <p class='notice'><%=notice%></p>  
+  <p class='alert'><%=alert%></p>  
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <h1>Listing Type Test</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @typetest.each do |typetest| %>
+        <tr>
+          <td><%= typetest.description %></td>
+          <td><%= link_to 'Edit', edit_admin_typetest_path(typetest) %></td>
+           <td><%= link_to 'Destroy', admin_typetest_path(typetest), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <button  class="btn"><%= link_to 'New typetest', new_admin_typetest_path %></button>
+</div>
+

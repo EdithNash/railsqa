@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <h1>Listing Stage</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @stage.each do |stage| %>
+        <tr>
+          <td><%= stage.description %></td>
+          <td><%= link_to 'Edit', edit_admin_stage_path(stage) %></td>
+          <td><%= link_to 'Destroy', stage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <button  class="btn"><%= link_to 'New Stage', new_admin_stage_path %></button>
+</div>

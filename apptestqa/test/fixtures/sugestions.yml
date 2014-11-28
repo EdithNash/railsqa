@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  evidence: MyText
+  suggestion_date: 2014-08-17
+  resolution: MyText
+
+two:
+  description: MyText
+  evidence: MyText
+  suggestion_date: 2014-08-17
+  resolution: MyText

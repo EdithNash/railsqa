@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <h1>Listing incident</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Evidence</th>
+        <th>Incidente_date</th>
+        <th>rvalidation_date</th>
+        <th>rvalidationcount</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @incident.each do |incident| %>
+        <tr>
+          <td><%= incident.description %></td>
+          <td><%= incident.evidence %></td>
+          <td><%= incident.Incidente_date %></td>
+          <td><%= incident.rvalidation_date %></td>
+          <td><%= incident.rvalidationcount %></td>
+          <td><%= link_to 'Edit', edit_admin_incident_path(incident) %></td>
+          <td><%= link_to 'Destroy', admin_incident_path(incident)  , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <button  class="btn"><%= link_to 'New incident', new_admin_incident_path %></button>
+</div>

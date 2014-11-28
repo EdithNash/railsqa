@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <h1>Listing testcase</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Request</th>
+        <th>Precondition</th>
+        <th>Comment</th>
+        <th>Execution</th>
+        <th>Typetest</th>
+        <th>Stage</th>
+        <th>User</th>
+        <th>Componenet</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @testcase.each do |testcase| %>
+        <tr>
+          <td><%= testcase.number %></td>
+          <td><%= testcase.name %></td>
+          <td><%= testcase.description %></td>
+          <td><%= testcase.request %></td>
+          <td><%= testcase.precondition %></td>
+          <td><%= testcase.comment %></td>
+          <td><%= testcase.execution %></td>
+          <td><%= typetest_name(testcase.typetest_id)%></td>
+          <td><%= stage_name(testcase.admin_stage_id)%></td>
+          <td><%= user_name(testcase.user_id)%></td>
+          <td><%= component_name(testcase.component_id)%></td>
+          <td><%= link_to 'Edit', edit_admin_testcase_path(testcase) %></td>
+          <td><%= link_to 'Destroy', admin_testcase_path(testcase)  , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <button  class="btn"><%= link_to 'New testcase', new_admin_testcase_path %></button>
+</div>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Apptestqa</title>
+   <!--toma todas las hojas CSS del directorio app/assets/stylesheets y las inserta en la plantilla-->
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+   <!--toma todas las hojas Javascripts y las inserta en la plantilla-->
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+   <!--pasa unos parámetros para evitar que hackeen nuestra aplicación web-->
+  <%= csrf_meta_tags %>
+</head>
+
+
+<body>
+	<p class='notice'><%=notice%></p>  
+	<p class='alert'><%=alert%></p>  
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  description: MyText
+  expected: MyText
+  result: MyText
+  rails: MyString
+  g: MyString
+  model: MyString
+  Step: MyString
+  number: 1
+  description: MyText
+  expected: MyText
+  result: MyText
+
+two:
+  number: 1
+  description: MyText
+  expected: MyText
+  result: MyText
+  rails: MyString
+  g: MyString
+  model: MyString
+  Step: MyString
+  number: 1
+  description: MyText
+  expected: MyText
+  result: MyText

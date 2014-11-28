@@ -1,0 +1,72 @@
+<%= form_for @testcase, url: testcase do |f| %>
+  <% if @testcase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@testcase.errors.count, "error") %> prohibited this admin_testcase from being saved:</h2>
+
+      <ul>
+      <% @testcase.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Number %><br>
+    <%= f.text_field :number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Name%><br>
+    <%= f.text_area :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Description %><br>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Request %><br>
+    <%= f.text_area:request %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Precondition %><br>
+    <%= f.text_area :precondition %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Comment %><br>
+    <%= f.text_area :comment %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Execution %><br>
+    <%=f.text_field :execution %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Type_test %><br>
+    <%= f.collection_select :typetest_id, Typetest.all, :id, :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Stage %><br>
+    <%= f.collection_select :admin_stage_id, Admin::Stage.all, :id, :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :User %><br>
+    <%= f.collection_select :user_id, User.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :component %><br>
+    <%= f.collection_select :component_id, Component.all, :id, :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

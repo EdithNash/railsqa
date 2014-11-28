@@ -1,0 +1,21 @@
+<%= form_for @statusqc, url: statusqc do |f| %>
+  <% if @statusqc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@statusqc.errors.count, "error") %> prohibited this statusqc from being saved:</h2>
+
+      <ul>
+      <% @statusqc.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

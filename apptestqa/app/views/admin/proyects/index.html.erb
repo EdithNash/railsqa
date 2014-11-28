@@ -1,0 +1,31 @@
+<h1>Listing proyects</h1>
+
+<table class="table table-striped" >
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Version</th>
+      <th>Classification</th>
+      <th>StatusQC</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @proyects.each do |proyect| %>
+      <tr>
+        <td><%= proyect.name %></td>
+        <td><%= proyect.version %></td>
+        <td><%= classification_name(proyect.classification_id)%></td>
+        <td><%= statusqc_name(proyect.statusqc_id)%></td>
+        <td><%= link_to 'Edit', edit_admin_proyect_path(proyect) %></td>
+        <td><%= link_to 'Destroy', admin_proyect_path(proyect), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<button  class="btn"> <%= link_to 'New Proyect', new_admin_proyect_path %></button>

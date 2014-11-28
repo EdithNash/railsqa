@@ -1,0 +1,27 @@
+<h1>Listing Component</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @components.each do |component| %>
+      <tr>
+        <td><%= proyect_name(component.proyect_id)%></td>
+        <td><%= component.description %></td>
+        <td><%= link_to 'Edit', edit_admin_component_path(component) %></td>
+        <td><%= link_to 'Destroy', admin_component_path(component), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<button  class="btn"><%= link_to 'New Value', new_admin_component_path %></button>
